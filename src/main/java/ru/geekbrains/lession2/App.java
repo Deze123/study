@@ -19,7 +19,7 @@ public class App
     // task 6
     System.out.println(checkBalance(new int[]{1, 1, 1, 3}));
     // task 7
-    System.out.println(moveElements((new int[]{1 ,2 ,3 ,4, 5}), 2));
+    System.out.println(Arrays.toString(moveElements((new int[]{1 ,2 ,3 ,4, 5}), 2)));
   }
 
 
