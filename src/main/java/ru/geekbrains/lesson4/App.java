@@ -76,16 +76,16 @@ public class App
     return false;
   }
 
-  private static boolean lineCheck(int y, int x, int diagonalY, int diagonalX, char symb)
+  private static boolean lineCheck(int y, int x, int vectorY, int vectorX, char symb)
   {
-    int wayX = x + (DOTS_TO_WIN - 1) * diagonalY;
-    int wayY = y + (DOTS_TO_WIN - 1) * diagonalX;
+    int wayX = x + (DOTS_TO_WIN - 1) * vectorY;
+    int wayY = y + (DOTS_TO_WIN - 1) * vectorX;
     if(wayX < 0 || wayY < 0 || wayX > SIZE_X - 1 || wayY > SIZE_Y - 1)
       return false;
     for(int i = 0; i < DOTS_TO_WIN; i++)
     {
-      int pointY = y + i * diagonalY;
-      int pointX = x + i * diagonalX;
+      int pointY = y + i * vectorY;
+      int pointX = x + i * vectorX;
       if(map[pointY][pointX] != symb)
         return false;
     }
