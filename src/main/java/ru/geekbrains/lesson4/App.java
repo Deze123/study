@@ -48,44 +48,36 @@ public class App
     System.out.println("Game Over");
   }
 
-  private static boolean checkWin(char symb)
+  private static boolean checkWin(char sym)
   {
     for(int i = 0; i < SIZE; i++)
     {
       for(int j = 0; j < SIZE; j++)
       {
-        if(lineCheck(i, j, 0, 1, symb))
-        {
+        if(lineCheck(i, j, 0, 1, sym))
           return true;
-        }
-        if(lineCheck(i, j, 1, 1, symb))
-        {
+        if(lineCheck(i, j, 1, 1, sym))
           return true;
-        }
-        if(lineCheck(i, j, 1, 0, symb))
-        {
+        if(lineCheck(i, j, 1, 0, sym))
           return true;
-        }
-        if(lineCheck(i, j, -1, 1, symb))
-        {
+        if(lineCheck(i, j, -1, 1, sym))
           return true;
-        }
       }
     }
     return false;
   }
 
-  private static boolean lineCheck(int y, int x, int vectorY, int vectorX, char symb)
+  // проверка линии
+  private static boolean lineCheck(int y, int x, int vectorY, int vectorX, char sym)
   {
-    int wayX = x + (DOTS_TO_WIN - 1) * vectorY;
-    int wayY = y + (DOTS_TO_WIN - 1) * vectorX;
-    if(wayX < 0 || wayY < 0 || wayX > SIZE - 1 || wayY > SIZE - 1)
-      return false;
+    int wayX = x + (DOTS_TO_WIN - 1) * vectorX;
+    int wayY = y + (DOTS_TO_WIN - 1) * vectorY;
+    if(wayX < 0 || wayY < 0 || wayX > SIZE - 1 || wayY > SIZE - 1) return false;
     for(int i = 0; i < DOTS_TO_WIN; i++)
     {
       int pointY = y + i * vectorY;
       int pointX = x + i * vectorX;
-      if(map[pointY][pointX] != symb)
+      if(map[pointY][pointX] != sym)
         return false;
     }
     return true;
