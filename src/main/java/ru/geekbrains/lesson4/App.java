@@ -110,8 +110,8 @@ public class App
     int x, y;
     do
     {
-      x = rnd.nextInt(SIZE_X);
-      y = rnd.nextInt(SIZE_Y);
+      x = rnd.nextInt(SIZE_X) - 1;
+      y = rnd.nextInt(SIZE_Y) - 1;
     } while(!isCellValid(x, y));
     System.out.println("AI goes to point " + (x + 1) + " " + (y + 1));
     map[y][x] = DOT_O;
