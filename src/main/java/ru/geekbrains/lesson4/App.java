@@ -10,7 +10,7 @@ public class App
   public static final char DOT_EMPTY = '•';
   public static int SIZE_X      = 5;
   public static int SIZE_Y      = 5;
-  public static int DOTS_TO_WIN = 3;
+  public static int DOTS_TO_WIN = 4;
   public static Random   rnd     = new Random();
   public static char[][] map;
   public static Scanner  scanner = new Scanner(System.in);
