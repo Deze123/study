@@ -48,19 +48,19 @@ public class App
     System.out.println("Game Over");
   }
 
-  private static boolean checkWin(char sym)
+  private static boolean checkWin(char symbol)
   {
     for(int i = 0; i < SIZE; i++)
     {
       for(int j = 0; j < SIZE; j++)
       {
-        if(lineCheck(i, j, 0, 1, sym))
+        if(lineCheck(i, j, 0, 1, symbol))
           return true;
-        if(lineCheck(i, j, 1, 1, sym))
+        if(lineCheck(i, j, 1, 1, symbol))
           return true;
-        if(lineCheck(i, j, 1, 0, sym))
+        if(lineCheck(i, j, 1, 0, symbol))
           return true;
-        if(lineCheck(i, j, -1, 1, sym))
+        if(lineCheck(i, j, -1, 1, symbol))
           return true;
       }
     }
@@ -68,7 +68,7 @@ public class App
   }
 
   // проверка линии
-  private static boolean lineCheck(int y, int x, int vectorY, int vectorX, char sym)
+  private static boolean lineCheck(int y, int x, int vectorY, int vectorX, char symbol)
   {
     int wayX = x + (DOTS_TO_WIN - 1) * vectorX;
     int wayY = y + (DOTS_TO_WIN - 1) * vectorY;
@@ -77,7 +77,7 @@ public class App
     {
       int pointY = y + i * vectorY;
       int pointX = x + i * vectorX;
-      if(map[pointY][pointX] != sym)
+      if(map[pointY][pointX] != symbol)
         return false;
     }
     return true;
