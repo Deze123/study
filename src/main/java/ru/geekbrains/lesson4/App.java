@@ -84,9 +84,9 @@ public class App
       return false;
     for(int i = 0; i < DOTS_TO_WIN; i++)
     {
-      int itemY = y + i * diagonalY;
-      int itemX = x + i * diagonalX;
-      if(map[itemY][itemX] != symb)
+      int pointY = y + i * diagonalY;
+      int pointX = x + i * diagonalX;
+      if(map[pointY][pointX] != symb)
         return false;
     }
     return true;
@@ -98,7 +98,8 @@ public class App
     {
       for(int j = 0; j < SIZE_X; j++)
       {
-        if(map[i][j] == DOT_EMPTY) return false;
+        if(map[i][j] == DOT_EMPTY)
+          return false;
       }
     }
     return true;
