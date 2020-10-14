@@ -8,8 +8,7 @@ public class App
   public static final char DOT_X     = 'X';
   public static final char DOT_O     = 'O';
   public static final char DOT_EMPTY = '•';
-  public static int SIZE_X      = 5;
-  public static int SIZE_Y      = 5;
+  public static int SIZE      = 5;
   public static int DOTS_TO_WIN = 4;
   public static Random   rnd     = new Random();
   public static char[][] map;
@@ -51,9 +50,9 @@ public class App
 
   private static boolean checkWin(char symb)
   {
-    for(int i = 0; i < SIZE_Y; i++)
+    for(int i = 0; i < SIZE; i++)
     {
-      for(int j = 0; j < SIZE_X; j++)
+      for(int j = 0; j < SIZE; j++)
       {
         if(lineCheck(i, j, 0, 1, symb))
         {
@@ -80,7 +79,7 @@ public class App
   {
     int wayX = x + (DOTS_TO_WIN - 1) * vectorY;
     int wayY = y + (DOTS_TO_WIN - 1) * vectorX;
-    if(wayX < 0 || wayY < 0 || wayX > SIZE_X - 1 || wayY > SIZE_Y - 1)
+    if(wayX < 0 || wayY < 0 || wayX > SIZE - 1 || wayY > SIZE - 1)
       return false;
     for(int i = 0; i < DOTS_TO_WIN; i++)
     {
@@ -94,9 +93,9 @@ public class App
 
   public static boolean isMapFull()
   {
-    for(int i = 0; i < SIZE_Y; i++)
+    for(int i = 0; i < SIZE; i++)
     {
-      for(int j = 0; j < SIZE_X; j++)
+      for(int j = 0; j < SIZE; j++)
       {
         if(map[i][j] == DOT_EMPTY)
           return false;
@@ -110,8 +109,8 @@ public class App
     int x, y;
     do
     {
-      x = rnd.nextInt(SIZE_X) - 1;
-      y = rnd.nextInt(SIZE_Y) - 1;
+      x = rnd.nextInt(SIZE);
+      y = rnd.nextInt(SIZE);
     } while(!isCellValid(x, y));
     System.out.println("AI goes to point " + (x + 1) + " " + (y + 1));
     map[y][x] = DOT_O;
@@ -131,16 +130,16 @@ public class App
 
   public static boolean isCellValid(int x, int y)
   {
-    if(x < 0 || x >= SIZE_X || y < 0 || y >= SIZE_Y) return false;
+    if(x < 0 || x >= SIZE || y < 0 || y >= SIZE) return false;
     return map[y][x] == DOT_EMPTY;
   }
 
   public static void initMap()
   {
-    map = new char[SIZE_Y][SIZE_X];
-    for(int i = 0; i < SIZE_Y; i++)
+    map = new char[SIZE][SIZE];
+    for(int i = 0; i < SIZE; i++)
     {
-      for(int j = 0; j < SIZE_X; j++)
+      for(int j = 0; j < SIZE; j++)
       {
         map[i][j] = DOT_EMPTY;
       }
@@ -149,15 +148,15 @@ public class App
 
   public static void printMap()
   {
-    for(int i = 0; i <= SIZE_Y; i++)
+    for(int i = 0; i <= SIZE; i++)
     {
       System.out.print(i + " ");
     }
     System.out.println();
-    for(int i = 0; i < SIZE_Y; i++)
+    for(int i = 0; i < SIZE; i++)
     {
       System.out.print((i + 1) + " ");
-      for(int j = 0; j < SIZE_X; j++)
+      for(int j = 0; j < SIZE; j++)
       {
         System.out.print(map[i][j] + " ");
       }
