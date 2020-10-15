@@ -67,7 +67,6 @@ public class App
     return false;
   }
 
-  // проверка линии
   private static boolean lineCheck(int y, int x, int vectorY, int vectorX, char symbol)
   {
     int wayX = x + (DOTS_TO_WIN - 1) * vectorX;
