@@ -33,7 +33,7 @@ public class Cat
   {
     if(p.getFood() >= getAppetite())
     {
-      p.decreaseFood(appetite, this);
+      p.decreaseFood(appetite);
       hungry = false;
     }
     else

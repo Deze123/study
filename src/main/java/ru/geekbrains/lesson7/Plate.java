@@ -9,9 +9,9 @@ public class Plate
     this.food = food;
   }
 
-  public void decreaseFood(int n, Cat cat)
+  public void decreaseFood(int n)
   {
-    if(cat.getAppetite() > getFood())
+    if(food - n < 0)
     {
       System.out.println("cannot be less than zero");
     }
