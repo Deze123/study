@@ -3,7 +3,7 @@ package ru.geekbrains.lesson2_2;
 import ru.geekbrains.lesson2_2.Exeptions.MyArrayDataException;
 import ru.geekbrains.lesson2_2.Exeptions.MySizeArrayException;
 
-public class ArrayCheck
+public class Main
 {
   public static void main(String[] args)
   {
