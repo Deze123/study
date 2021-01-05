@@ -20,9 +20,10 @@ public class Main
     };
 
     HashMap<String, Integer> uniqueTown = new HashMap<>();
-    for (String t : towns)
+    for(String s : towns)
     {
-      uniqueTown.put(t, uniqueTown.getOrDefault(t,0) + 1);
+      Integer result = uniqueTown.get(s);
+      uniqueTown.put(s, result == null ? 1 : result + 1);
     }
 
     System.out.println(uniqueTown + "\n");
