@@ -12,15 +12,15 @@ public class Phonebook
     this.pb = new HashMap<>();
   }
 
-  public void addContact(String name, String phone)
+  public void addContact(String lastName, String phone)
   {
-    HashSet<String> book = pb.getOrDefault(name, new HashSet<>());
+    HashSet<String> book = pb.getOrDefault(lastName, new HashSet<>());
     book.add(phone);
-    pb.put(name, book);
+    pb.put(lastName, book);
   }
 
-  public void findAndPrint(String name)
+  public void findAndPrint(String lastname)
   {
-    System.out.println("Contact Name is " + name + " and Phone number is " + pb.getOrDefault(name, new HashSet<>()));
+    System.out.println("Contact Last Name is " + lastname + " and Phone number is " + pb.getOrDefault(lastname, new HashSet<>()));
   }
 }

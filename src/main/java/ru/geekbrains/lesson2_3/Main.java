@@ -31,14 +31,14 @@ public class Main
     // Phonebook
     Phonebook book = new Phonebook();
     // Create contacts
-    book.addContact("Анатолий", "12345");
-    book.addContact("Женя", "123456");
-    book.addContact("Рома", "1234567");
-    book.addContact("Артем", "12345678");
-    book.addContact("Аня", "123456789");
+    book.addContact("LastName1", "12345");
+    book.addContact("LastName2", "123456");
+    book.addContact("LastName3", "1234567");
+    book.addContact("LastName4", "12345678");
+    book.addContact("LastName5", "123456789");
 
     // Try to find contact
-    book.findAndPrint("Анатолий");
+    book.findAndPrint("LastName1");
 
 
   }
